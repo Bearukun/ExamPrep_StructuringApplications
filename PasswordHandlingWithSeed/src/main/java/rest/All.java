@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author plaul1
  */
-@Path("demoall")
+@Path("allusers")
 public class All {
 
   @Context
@@ -38,7 +38,10 @@ public class All {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public String getText() {
-    return " {\"message\" : \"result for all\"}";
+//    return " {\"message\" : \"result for all\"}";
+    
+    return "[{\"name\": \"Jan\",\"mail\":\"j@a.dk\"},{\"name\":\"Ann\",\"mail\":\"a@a.dk\"},{\"name\":\"ib\",\"mail\":\"i@a.dk\"}]";
+    
   }
 
 }
