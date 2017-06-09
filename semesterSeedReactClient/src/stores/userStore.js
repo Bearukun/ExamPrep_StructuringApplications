@@ -40,6 +40,7 @@ class UserStore {
             this.setErrorMessage(fetchHelper.addJustErrorMessage(err));
         })
     }
+
 }
 
 let userStore = new UserStore();
