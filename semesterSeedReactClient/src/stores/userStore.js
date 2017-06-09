@@ -20,7 +20,7 @@ class UserStore {
         this.messageFromServer = "";
         let errorCode = 200;
         const options = fetchHelper.makeOptions("GET", true);
-        fetch(URL + "api/demouser/footballclubs", options)
+        fetch(URL + "api/footballclubs", options)
             .then((res) => {
                 if (res.status > 210 || !res.ok) {
                     errorCode = res.status;

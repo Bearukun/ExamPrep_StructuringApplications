@@ -16,7 +16,7 @@ const UserPage = observer(
         render() {
             var lis = userStore.clubs.map((club)=>{
                     return(
-                        <li>{club.name} <a href={club.url}/></li>
+                        <li><a href={club.url}>{club.name}</a></li>
                         // <li>{club.name}, {club.url}></li>
                     )
                 }
