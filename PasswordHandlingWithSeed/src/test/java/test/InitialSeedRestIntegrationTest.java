@@ -114,5 +114,17 @@ public class InitialSeedRestIntegrationTest {
             .body("error.message", equalTo("No authorization header provided"));
 
   }
+  
+  @Test
+  public void verifyFootballClubs() {
+    login("Peter","test");
+    given()
+            .contentType("application/json")
+            .when()
+            .get("/api/footballclubs").then()
+            .statusCode(401)
+            .body( equalTo("[{\"name\":\"Liverpool\", \"url\":\"http://www.liverpoolfc.com\"},{\"name\":\"Manchester United\",\"url\" : \"http://www.manutd.com/\"}]"));
+
+  }
 
 }

@@ -6,7 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("demouser")
+@Path("footballclubs")
 @RolesAllowed("User")
 public class User {
   
@@ -16,14 +16,13 @@ public class User {
 //    return "{\"message\" : \"Hello User from Server (Accesible by only authenticated USERS)\"}"; 
 //  }
   
-    @GET
-    @Path("demouser")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getSomething(){
-        return "{\"message\" : \"Hello User from Server (Accesible by only authenticated USERS)\"}"; 
-    }
+//    @GET
+//    @Path("demouser")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String getSomething(){
+//        return "{\"message\" : \"Hello User from Server (Accesible by only authenticated USERS)\"}"; 
+//    }
   
-    @Path("footballclubs")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getClubs(){
