@@ -18,20 +18,35 @@ public class makeTestUsers {
       System.out.println("Creating TEST Users");
       if (em.find(User.class, "user") == null) {
         em.getTransaction().begin();
+        
         Role userRole = new Role("User");
         Role adminRole = new Role("Admin");
-        User user = new User("user", "test");
+        
+        User user = new User("Peter", "test");
+        User admin = new User("Anne", "test");
+        
         user.addRole(userRole);
-        User admin = new User("admin", "test");
         admin.addRole(adminRole);
-        User both = new User("user_admin", "test");
-        both.addRole(userRole);
-        both.addRole(adminRole);
+        
         em.persist(userRole);
         em.persist(adminRole);
         em.persist(user);
         em.persist(admin);
-        em.persist(both);
+        
+//        Role userRole = new Role("User");
+//        Role adminRole = new Role("Admin");
+//        User user = new User("user", "test");
+//        user.addRole(userRole);
+//        User admin = new User("admin", "test");
+//        admin.addRole(adminRole);
+//        User both = new User("user_admin", "test");
+//        both.addRole(userRole);
+//        both.addRole(adminRole);
+//        em.persist(userRole);
+//        em.persist(adminRole);
+//        em.persist(user);
+//        em.persist(admin);
+//        em.persist(both);
         em.getTransaction().commit();
         System.out.println("Created TEST Users");
       }
